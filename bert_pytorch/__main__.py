@@ -7,7 +7,7 @@ from .trainer import BERTTrainer
 from .dataset import BERTDataset, WordVocab
 
 
-def train():
+def get_args():
     parser = argparse.ArgumentParser()
 
     parser.add_argument("-c", "--train_dataset", required=True, type=str, help="train dataset for train bert")
@@ -36,7 +36,10 @@ def train():
     parser.add_argument("--adam_beta2", type=float, default=0.999, help="adam first beta value")
 
     args = parser.parse_args()
+    return args
 
+
+def train(args):
     # 读词表
     print("Loading Vocab", args.vocab_path)
     vocab = WordVocab.load_vocab(args.vocab_path)

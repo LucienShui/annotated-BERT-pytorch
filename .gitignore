@@ -171,3 +171,5 @@ fabric.properties
 # idea
 .idea
 
+# corpus
+corpus.*
